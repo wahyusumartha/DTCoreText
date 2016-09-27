@@ -92,6 +92,7 @@ NSString * const DTLazyImageViewDidFinishDownloadNotification = @"DTLazyImageVie
 	
 	if (!self.image && (_url || _urlRequest) && !_connection && self.superview)
 	{
+		[_imageCache removeAllObjects];
 		UIImage *image = [_imageCache objectForKey:_url];
 		
 		if (image)
